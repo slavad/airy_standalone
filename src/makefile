@@ -27,14 +27,14 @@ FFLAGS = -O -std=legacy
 TARGET_STAT = ../libairy.a
 TARGET_DYN = ../libairy.so
 
-all : $(TARGET_STAT) #$(TARGET_DYN)
+all : $(TARGET_STAT) $(TARGET_DYN)
 
 $(TARGET_STAT) : $(OBJ) $(OBJM)
 	ar r $@ $?
 	ranlib $@
 
-# $(TARGET_DYN) : $(OBJ) $(OBJM)
-# 	$(CC) -shared ${LDFLAGS} -o $@  $?
+$(TARGET_DYN) : $(OBJ) $(OBJM)
+	$(CC) -shared ${LDFLAGS} -o $@ $?
 
 $(OBJM):
 	$(FC) $(FFLAGSM) -c $*.f
