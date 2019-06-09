@@ -1,0 +1,8 @@
+*.o
+*.so
+*.a
+*.dylib
+*.1
+chk/test*
+*.log
+.DS_Store
